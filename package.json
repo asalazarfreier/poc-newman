@@ -1,0 +1,27 @@
+{
+  "name": "poc-integration-test",
+  "version": "1.0.0",
+  "description": "Teco PoC Integration Test",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test-all": "node ./run-tests",
+    "postman": "node ./postman/run-collections.js",
+    "chakram-test": "node ./chakram/run-chakram-test.js",
+    "chakram": "node ./chakram/run-chakram.js"
+  },
+  "author": "andres.sf@globant.com",
+  "devDependencies": {
+    "chakram": "^1.5.0",
+    "mocha": "^7.2.0",
+    "mocha-parallel-tests": "^2.3.0",
+    "mochawesome": "^6.1.1"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "concurrently": "^5.2.0",
+    "newman": "^5.0.1",
+    "newman-reporter-html": "^1.0.5"
+  }
+}

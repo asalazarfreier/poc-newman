@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "72a83d7e-208d-40b9-b1c4-5fa46157a4d3",
+		"name": "PoC - Integration Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://httpbin.org/get?isGood=true&isBad=false",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54405e79-0d11-4312-a6b8-e19b7a08e321",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"console.log(jsonData.args);",
+							"",
+							"pm.test(\"Test isGood - PASS\", function () {",
+							"    pm.expect(jsonData.args.isGood).to.eql(\"true\");",
+							"});",
+							"",
+							"pm.test(\"Test isBad - forced to FAIL\", function () {",
+							"    pm.expect(jsonData.args.isBad).to.eql(\"false\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/get?isGood=true&isBad=false",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "isGood",
+							"value": "true"
+						},
+						{
+							"key": "isBad",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
