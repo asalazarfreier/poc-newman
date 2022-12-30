@@ -14,7 +14,7 @@
   "author": "andres.sf@globant.com",
   "devDependencies": {
     "chakram": "^1.5.0",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "mocha-parallel-tests": "^2.3.0",
     "mochawesome": "^6.1.1"
   },
